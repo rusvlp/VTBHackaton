@@ -19,7 +19,7 @@ public class SecurityConfig {
 
         http.authorizeRequests()
                 .antMatchers("/registration", "/login/*").not().fullyAuthenticated()
-                .antMatchers().hasRole("ADMIN")
+                .antMatchers("admin/**", "/admin").hasRole("ADMIN")
                 .antMatchers("account/**").hasAnyRole()
                 .antMatchers("/").permitAll()
                 .anyRequest().authenticated()

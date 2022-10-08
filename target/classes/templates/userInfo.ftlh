@@ -8,9 +8,9 @@
         Аватара нет
     </#if>
     ФИО: ${targetUser.lastName} ${targetUser.firstName} ${targetUser.middleName} <br />
-    Должность: ${targetUser.jobTitle}
-    Дата рождения: ${targetUser.dateOfBirth}
-    Отдел: <#if targetUser.department?? && targetUser.department.title??> ${targetUser.department.title} <#else>Нет отдела</#if>
+    Должность: ${targetUser.jobTitle} <br />
+    Дата рождения: ${targetUser.dateOfBirth} <br />
+    Отдел: <#if targetUser.department?? && targetUser.department.title??> ${targetUser.department.title} <#else>Нет отдела</#if> <br />
     Загрузить аватар:
     <form action = "/account/setAvatar" method="post" enctype="multipart/form-data">
         <input type="file" name = "file">

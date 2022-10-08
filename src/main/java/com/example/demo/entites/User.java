@@ -2,6 +2,7 @@ package com.example.demo.entites;
 
 import com.example.demo.enums.Role;
 import lombok.Data;
+import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -60,6 +62,9 @@ public class User implements UserDetails {
     @Column(name = "dateOfCreate")
     private LocalDateTime dateOfCreate;
 
+    @ToString.Exclude
+    @ManyToMany(mappedBy = "participantList", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Event> events;
     @PrePersist
     private void init(){
         dateOfCreate = LocalDateTime.now();
