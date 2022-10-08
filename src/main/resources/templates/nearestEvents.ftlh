@@ -7,8 +7,14 @@
                 <#list nearestEvents as event>
                 <div class="event">
                     <div id="FonParty">
-                        <img src="/static/images/PhotoParty.png" style="width: 250px; margin-bottom: 5px; display: block; margin: 0 auto; margin-bottom: 12px; justify-content: center;">
-                        <div>Бла бла бла</div>
+                        <#if event.previewImage??>
+                            <img src="/image/${event.previewImage.id}" style="width: 250px; margin-bottom: 5px; display: block; margin: 0 auto; margin-bottom: 12px; justify-content: center;">
+                        <#else>
+                            <img src="/static/images/imagePlaceholder.jpeg" style="width: 250px; margin-bottom: 5px; display: block; margin: 0 auto; margin-bottom: 12px; justify-content: center;">
+                        </#if>
+                        <div>
+                            ${event.title}
+                        </div>
                     </div>
                 </div>
                 <#else>
