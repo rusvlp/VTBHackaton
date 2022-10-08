@@ -1,6 +1,7 @@
 package com.example.demo.services;
 
 import com.example.demo.entites.Event;
+import com.example.demo.exceptions.NotFoundException;
 import com.example.demo.repositories.EventRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,10 @@ public class EventService{
 
     public List<Event> getAllEvents(){
         return eventRepository.findAll();
+    }
+
+    public Event getEventById(Long id){
+        return eventRepository.findById(id).orElseThrow(() -> new NotFoundException());
     }
 
     public void save(Event e){

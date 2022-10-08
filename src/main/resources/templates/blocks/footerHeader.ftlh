@@ -8,6 +8,11 @@
             Здесь будет хэдер
             <#if user?? && user.username??>
                 Здравствуйте, ${user.username}
+                <form action = "/logout" method="post">
+                    <input type = "hidden" name = "_csrf" value = "${_csrf.token}">
+                    <input type="submit" value="Выйти из аккаунта">
+                </form>
+                <a href = "/events">Мероприятия</a>
             <#else>
                 Вы не вошли,
                 <a href = "/login">войти</a>
@@ -15,7 +20,7 @@
                 <a href = "/registration">зарегистрироваться</a>
             </#if>
             <br />
-            <a href = "/events">Мероприятия</a>
+
         </div>
         <#nested />
         <div class = "footer">

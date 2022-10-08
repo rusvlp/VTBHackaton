@@ -24,7 +24,7 @@ public class MainController {
         model.addAttribute("user", u);
         model.addAttribute("title", "Главная");
         if (p == null){
-            return "redirect:/login";
+            return "main";
         }
         return "redirect:/account";
     }

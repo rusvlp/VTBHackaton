@@ -21,7 +21,7 @@ public class SecurityConfig {
                 .antMatchers("/registration", "/login/*").not().fullyAuthenticated()
                 .antMatchers("admin/**", "/admin").hasRole("ADMIN")
                 .antMatchers("account/**").hasAnyRole()
-                .antMatchers("/").permitAll()
+                .antMatchers("/", "events/**", "/events").permitAll()
                 .anyRequest().authenticated()
             .and()
                 .formLogin()

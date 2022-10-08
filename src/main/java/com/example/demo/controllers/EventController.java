@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.entites.Event;
 import com.example.demo.services.EventService;
 import com.example.demo.services.UserService;
 import lombok.RequiredArgsConstructor;
@@ -35,6 +36,12 @@ public class EventController {
     }
 
     @GetMapping("/{id}")
-    public String eventInfo(@PathVariable Long id, Principal p, Model m)
+    public String eventInfo(@PathVariable Long id, Principal p, Model m){
+        Event e = eventService.getEventById(id);
+        m.addAttribute("user", userService.getUserByPrincipal(p));
+        m.addAttribute("title", e.getTitle());
+        m.addAttribute("event", e);
+        return "eventInfo";
+    }
 
 }

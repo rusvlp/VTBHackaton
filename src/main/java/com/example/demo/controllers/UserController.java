@@ -74,4 +74,11 @@ public class UserController {
         return "userInfo";
     }
 
+    @GetMapping("/logout/success")
+    public String successLogout(Principal p, Model m){
+        m.addAttribute("title", "Выход из аккаунта");
+        m.addAttribute("message", "Вы успешно вышли из аккаунта");
+        m.addAttribute("user", userService.getUserByPrincipal(p));
+        return "message";
+    }
 }
