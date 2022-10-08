@@ -1,0 +1,51 @@
+body{
+    font-family: sans-serif;
+}
+.headerEventsPage{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    padding-left: 90px;
+}
+.ItemList{
+    text-decoration: none;
+    color: #7E838E;
+    font-size: 20px;
+    padding-top: 50px;
+}
+.Compl{
+    padding-right: 10px;
+}
+.SeasonPass{
+    display: flex;
+    justify-content:space-around;
+    width: 80%;
+    padding-left: 90px;
+}
+.nearest{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.event{
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+}
+#FonParty{
+    background-color: blue;
+    height: 270px;
+}
+#FonBasketball{
+    background-color:blanchedalmond;
+    height: 270px;
+}
+#FonDota{
+    background-color:darkblue;
+    height: 270px;
+}
+#FonAll{
+    background-color: darkgray;
+    height: 270px;
+}
