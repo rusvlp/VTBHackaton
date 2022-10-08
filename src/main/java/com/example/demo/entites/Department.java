@@ -15,7 +15,7 @@ public class Department{
     private Long id;
 
     @Column(name = "title")
-    private String title;
+    protected String title;
 
     @OneToMany(mappedBy = "department")
     private List<User> employees;

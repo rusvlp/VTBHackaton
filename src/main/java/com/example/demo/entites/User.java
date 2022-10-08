@@ -22,7 +22,7 @@ public class User implements UserDetails {
     private Long id;
 
     @Column(name = "email")
-    private String email;
+    private String email = "";
 
     @Column(name = "username")
     private String username;
@@ -31,28 +31,28 @@ public class User implements UserDetails {
     private String password;
 
     @Column(name = "firstName")
-    private String firstName;
+    private String firstName = "";
 
     @Column(name = "lastName")
-    private String lastName;
+    private String lastName = "";
 
     @Column(name = "middleName")
-    private String middleName;
+    private String middleName = "";
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Image avatar;
 
     @Column(name = "jobTitle")
-    private String jobTitle;
+    private String jobTitle = "";
 
     @Column(name = "dateOfBirth")
-    private LocalDateTime dateOfBirth;
+    private LocalDateTime dateOfBirth = LocalDateTime.now();
 
     @Column(name = "roubleBalance")
-    private Long roubleBalance;
+    private Long roubleBalance = 0L;
     
     @Column(name = "cryptoBalance")
-    private Long cryptoBalance;
+    private Long cryptoBalance = 0L;
 
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     private Department department;

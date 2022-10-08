@@ -10,7 +10,7 @@
     ФИО: ${targetUser.lastName} ${targetUser.firstName} ${targetUser.middleName} <br />
     Должность: ${targetUser.jobTitle}
     Дата рождения: ${targetUser.dateOfBirth}
-    Отдел: ${targetUser.department.title}
+    Отдел: <#if targetUser.department?? && targetUser.department.title??> ${targetUser.department.title} <#else>Нет отдела</#if>
     Загрузить аватар:
     <form action = "/account/setAvatar" method="post" enctype="multipart/form-data">
         <input type="file" name = "file">
