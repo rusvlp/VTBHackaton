@@ -35,6 +35,9 @@ public class Event {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<User> participantList;
 
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Image previewImage;
+
     public String getFormattedDate(){
         String res = "";
         res += dateOfStart.getDayOfMonth() +
