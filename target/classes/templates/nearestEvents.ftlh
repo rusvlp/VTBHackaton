@@ -5,7 +5,7 @@
 
             <div class="nearest">
                 <#list nearestEvents as event>
-                <div class="event" onclick = "redirectToEvent(${event.id})">
+                <div class="event">
                     <div id="FonParty">
                         <#if event.previewImage??>
                             <img src="/image/${event.previewImage.id}" style="width: 250px; margin-bottom: 5px; display: block; margin: 0 auto; margin-bottom: 12px; justify-content: center;">
@@ -29,10 +29,6 @@
         </div>
 
 
+
     <a href = "/events/all">Все мероприятия</a>
-    <script>
-        function redirectToEvent(id){
-            document.location.replace("/events/" + id);
-        }
-    </script>
 </@fh.footerHeader>

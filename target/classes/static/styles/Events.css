@@ -33,11 +33,6 @@ body{
     flex-direction: column;
     width: 270px;
 }
-
-.event:hover{
-    cursor: pointer;
-}
-
 #FonParty{
     background-color: blue;
     height: 270px;
